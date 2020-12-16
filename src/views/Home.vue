@@ -43,6 +43,8 @@
 				  width="auto"
 				  :class="menuitemClasses"
 				  accordion
+				  :active-name="activeName"
+				  :open-names="openName"
 				>
 				  <template v-for="(item, componentIndex) in menu">
 					<!-- 展开并且有子菜单 -->
@@ -111,18 +113,12 @@
               isCollapsed: false,
 			  keepAliveList: [],
 			  title: "Home",
-			  showSettingPage: false,
-			  showSuggestionPage: false,
+			  activeName:'',//当前选中
+			  openName:['BasicData'],//默认展开二级-基础数据
 			  menu: [
 				{
-				  name: "主页",
-				  to: "home",
-				  icon: "md-apps",
-				  children: []
-				},
-				{
 				  name: "玩家管理",
-				  to: "playerinformation",
+				  to: "BasicData",
 				  icon: "ios-contacts-outline",
 				  children: [
 					{
@@ -175,34 +171,14 @@
 					  name: "充值玩家",
 					  to: "topupplayerscatter"
 					},
-					{
-					  name: "商城购买",
-					  to: "shopbuy"
-					},
-					{
-					  name:"抽卡统计",
-					  to:"lottery"
-					},
-					{
-					  name: "付费角色排行",
-					  to: "feeroleph"
-					}
-				  ]
-				},
-				{
-				  name: "留存率",
-				  to: "retention",
-				  icon: "ios-create-outline",
-				  children: [
-					{
-					  name: "留存率",
-					  to: "retention"
-					}
 				  ]
 				}
 			  ]
 			};
         },
+		mounted(){
+		      this.activeName = this.$route.path;//用name = path;
+		    },
         computed: {
             menuitemClasses: function () {
                 return [

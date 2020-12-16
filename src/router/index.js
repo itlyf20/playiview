@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect:"/home"
+    redirect:"/playerinformation"
   },
   {
     path: '/home',
@@ -49,34 +49,14 @@ const routes = [
 			component: ()=>import('../views/gearrechargescatter/Gearrechargescatter.vue')
 		  },
 		  {
-			path:'/lottery',
-			name:"lottery",
-			component:()=>import('../views/lottery/Lottery.vue')
-		  },
-		  {
 			path:'/rolezr',
 			name:"rolezr",
 			component: ()=>import('../views/rolezr/Rolezr.vue')
 		  },
 		  {
-			path:'/retention',
-			name:"retention",
-			component:()=>import('../views/retention/Retention.vue')
-		  },
-		  {
 			path:'/racedrawtimes',
 			name:"recedrawtimes",
 			component: ()=>import('../views/racedrawtimes/Racedrawtimes.vue')
-		  },
-		  {
-			path:'/shopbuy',
-			name:"shopbuy",
-			component:()=>import('../views/shopbuy/Shopbuy.vue')
-		  },
-		  {
-			path:'/feeroleph',
-			name:"feeroleph",
-			component: ()=>import('../views/feeroleph/Feeroleph.vue')
 		  },
 	]
   }
